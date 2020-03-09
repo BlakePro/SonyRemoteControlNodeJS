@@ -1,0 +1,24 @@
+{
+  "name": "blakebravia",
+  "version": "1.0.0",
+  "description": "Sony TV Android web app to send commands in NodeJS",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon index.js"
+  },
+  "author": "Cristian Yosafat Hernandez Ruiz",
+  "license": "ISC",
+  "dependencies": {
+    "@network-utils/arp-lookup": "^1.3.4",
+    "axios": "^0.19.2",
+    "body-parse": "^0.1.0",
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "helmet": "^3.21.3",
+    "html-minifier": "^4.0.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.2"
+  }
+}

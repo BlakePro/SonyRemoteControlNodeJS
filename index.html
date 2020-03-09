@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="#000">
+    <meta name="theme-color" content="#000">
+    <meta name="msapplication-navbutton-color" content="#000">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="bootstrap.min.css">
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "Roboto", sans-serif;
+        overflow: hidden;
+        background: #000;
+        color:#FFF;
+      }
+
+
+      .header {
+        position: absolute;
+      width: 100%;
+      height: 170px;
+      background: #272727;
+      z-index: 1;
+      color: #fff;
+      border-radius: 0px 0px 30px 30px;
+      }
+
+      .header h2{
+        margin-top: 30px;
+        text-align: center;
+      }
+
+      h2{
+        font-size: 18px;
+      }
+
+      a, a:hover, a:visited, a:active{
+        color: #FFF;
+        text-decoration: none;
+      }
+
+      .icons {
+        position: absolute;
+          top: 58px;
+          height: 100px;
+          width: 100%;
+          left: 50%;
+          transform: translateX(-50%);
+          z-index: 1;
+          display: flex;
+          margin-top: 18px;
+          justify-content: center;
+      }
+
+      .link {
+        text-decoration: none;
+        height: 70px;
+        width: 70px;
+        margin: 0px 7px;
+        color: #fff;
+        background: #444;
+        border-radius: 50%;
+        border: 0px;
+      }
+      .link:hover{
+        background: #444444f1;
+      }
+      #remote{
+        display: none;
+      }
+      #secondary_remote{
+        display: none;
+        position: absolute;
+        margin-top: 195px;
+        width: 100%;
+        height: 100%;
+      }
+      .row{
+        margin:0px;
+      }
+    </style>
+    <title>App</title>
+  </head>
+  <body>
+    <div id="code">{code}</div>
+    <div id="remote">
+      <div class="header">
+        <h2><a href="/" id="data_ip"></a></h2>
+      </div>
+
+      <div id="main_remote" class="icons">
+        <button data-action="tvpower" class="link" data-send="control">
+          <i data-feather="power"></i>
+        </button>
+        <button data-action="volumedown" class="link" data-send="control">
+          <i data-feather="volume-1"></i>
+        </button>
+        <button data-action="volumeup" class="link" data-send="control">
+          <i data-feather="volume-2"></i>
+        </button>
+        <button data-action="home" class="link" data-send="control">
+          <i data-feather="home"></i>
+        </button>
+      </div>
+    </div>
+
+    <div id="secondary_remote">
+      <div class="row">
+        <div class="col-4"></div>
+        <div class="col-4 text-center">
+          <button data-action="cursorup" class="link" data-send="control">
+            <i data-feather="arrow-up"></i>
+          </button>
+        </div>
+        <div class="col-4"></div>
+      </div>
+
+      <div class="row mt-3 mb-3">
+        <div class="col-4 text-right">
+          <button data-action="cursorleft" class="link" data-send="control" style="margin-right: -25px;">
+            <i data-feather="arrow-left"></i>
+          </button>
+        </div>
+        <div class="col-4 text-center">
+          <button data-action="dpadcenter" class="link" data-send="control">
+            <i data-feather="circle"></i>
+          </button>
+        </div>
+        <div class="col-4 text-right" style=" margin-left: -31px; ">
+          <button data-action="cursorright" class="link" data-send="control" style="margin-right: 32px;">
+            <i data-feather="arrow-right"></i>
+          </button>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-4"></div>
+        <div class="col-4 text-center">
+          <button data-action="cursordown" class="link" data-send="control">
+            <i data-feather="arrow-down"></i>
+          </button>
+        </div>
+        <div class="col-4"></div>
+      </div>
+
+      <div class="row mt-3 mr-4">
+        <div class="col-3">
+          <button data-action="return" class="link" data-send="control">
+            <i data-feather="corner-up-left"></i>
+          </button>
+        </div>
+        <div class="col-3">
+          <button data-action="channelup" class="link" data-send="control">
+              CH<br>
+            <i data-feather="arrow-up"></i>
+          </button>
+        </div>
+        <div class="col-3">
+          <button data-action="channeldown" class="link" data-send="control">
+            CH<br>
+            <i data-feather="arrow-down"></i>
+          </button>
+        </div>
+        <div class="col-3">
+          <button data-action="input" class="link" data-send="control">
+            <i data-feather="cast"></i>
+          </button>
+        </div>
+      </div>
+
+      <div class="row mt-3 mr-4">
+        <div class="col-3">
+          <button data-action="youtube" class="link" data-send="control">
+            <i data-feather="youtube"></i>
+          </button>
+        </div>
+        <div class="col-3">
+          <button data-action="play" class="link" data-send="control">
+            <i data-feather="play"></i>
+          </button>
+        </div>
+        <div class="col-3">
+          <button data-action="pause" class="link" data-send="control">
+            <i data-feather="pause"></i>
+          </button>
+        </div>
+        <div class="col-3">
+          <button data-action="muteon" class="link" data-send="control">
+            <i data-feather="volume-x"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+    <script src="jquery.min.js"></script>
+    <script src="feather.min.js"></script>
+    <script type="text/javascript">
+      feather.replace({
+        width: 36,
+        height: 36,
+        'stroke-width': 1,
+      });
+      action('click', '.link', function(elem){
+        var action = $(elem).data('action');
+        var send = $(elem).data('send');
+        if(send == 'control'){
+          var ip =  $('#ip').val();
+          action = ip + '/' + $('#' + action).val();
+        }
+        var url = '/' + send + '/' + action;
+        console.log(url);
+        $.ajax({
+          url:  url,
+          method: 'GET',
+          data: null,
+          beforeSend: function(xhr){
+          },
+          success: function(html){
+            if(send == 'tv')$('#code').html(html);
+          },
+          complete: function(){
+            if(send == 'tv'){
+              $('#data_ip').html($('#ip').val());
+              $('#remote').show();
+              $('#secondary_remote').show();
+            }
+          },
+          error: function(){
+          }
+        });
+      });
+
+      function get_values(parent){
+        var values = [];
+        var inputs = $(parent).find(':input');
+        if($(inputs).length > 0){
+          $(inputs).each(function (i, e){
+            if(!$(e).is('button')){
+              if(typeof e.name === 'string'){
+                if(!$(e).hasClass('block_send')){
+                  var name = e.name;
+                  var val = e.value;
+                  values.push({name: name, value: val});
+                }
+              }
+            }
+          });
+        }
+        return values;
+      }
+
+      function action(action, element, callback){
+        $(document.body).off(action, element).on(action, element, function(e){
+      		e.preventDefault();
+          if(typeof callback === "function")callback(this);
+      	});
+      }
+
+    </script>
+  </body>
+</html>
