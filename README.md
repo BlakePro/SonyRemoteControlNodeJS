@@ -1,7 +1,7 @@
 # SonyRemoteControlNodeJS
 This app let´s remote control your Sony TV Android via Network Web
 
-![Image description](https://github.com/breunigs/bravia-auth-and-remote)
+![WebApp Remote Control](https://github.com/BlakePro/SonyRemoteControlNodeJS/blob/master/static/exampleapp2.png?raw=true)
 
 # SonyTv
 You need to set your TV to use a pre-shared key.
